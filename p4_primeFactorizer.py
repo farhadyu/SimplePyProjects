@@ -2,7 +2,7 @@
 # By: Farhad Yusifov, 2017/07/14
 # Factors the number that is given, and returns a list of its prime factors
 from math import sqrt
-
+import time
 
 def factorize(factors):
     while True:
@@ -25,6 +25,7 @@ def factorize(factors):
 def main():
     while True:
         x = int(raw_input("ENTER A POSITIVE INTEGER: "))
+        tic = time.clock()
         if x == 1:
             print "\nFACTORS: ", [1]
             break
@@ -35,5 +36,7 @@ def main():
             break
         else:
             print "ENTER ANOTHER NUMBER"
+    toc = time.clock()
+    print toc - tic
 
 main()
