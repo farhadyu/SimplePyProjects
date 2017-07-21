@@ -53,6 +53,6 @@ def main():
         else:
             print "ENTER ANOTHER NUMBER"
     toc = time.clock()
-    print toc - tic
+    print "Process Time:", toc - tic
 
 main()
