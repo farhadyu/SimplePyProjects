@@ -20,5 +20,12 @@ def power(numa, numb):
     return numa ** numb
 
 
-def add(numa, numb):
+def something(numa, numb):
     pass
+
+statement = raw_input("Enter statement:\n")
+print statement
+
+# BEDMAS
+# find brackets first
+
