@@ -47,11 +47,14 @@ def spass(statement):
         if isinstance(i, float) and was_str == "-":
             i = -i
             del new_statement[-1]
-            if isinstance(old_str, float):
+            if isinstance(old_str, float) or old_str == ")":
                 new_statement.append("+")
-            new_statement.append(i)
-        else:
-            new_statement.append(i)
+        elif isinstance(i, float) and was_str == ")":
+            new_statement.append("*")
+        elif i == "(" and isinstance(was_str, float):
+            new_statement.append("*")
+
+        new_statement.append(i)
         old_str = was_str
         was_str = i
     return new_statement
@@ -82,8 +85,8 @@ def main():
     statement = spass(statement)
     statement = tpass(statement)
     print statement
-    statement = "print " + statement
-    exec statement
+    a = eval(statement)
+    print a
 
 
 main()
